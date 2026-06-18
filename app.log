@@ -18,3 +18,23 @@
 FROM clientes
 2026-06-18 07:50:33,531 - INFO - [generated in 0.00039s] {}
 2026-06-18 07:50:33,545 - INFO - ROLLBACK
+2026-06-18 07:52:49,240 - INFO - Iniciando API de cobranza
+2026-06-18 07:52:49,911 - INFO - Iniciando API de cobranza
+2026-06-18 07:53:02,750 - INFO - Intento de creación de cliente EMAIL=user@example.com
+2026-06-18 07:53:02,792 - INFO - SELECT DATABASE()
+2026-06-18 07:53:02,792 - INFO - [raw sql] {}
+2026-06-18 07:53:02,793 - INFO - SELECT @@sql_mode
+2026-06-18 07:53:02,793 - INFO - [raw sql] {}
+2026-06-18 07:53:02,793 - INFO - SELECT @@lower_case_table_names
+2026-06-18 07:53:02,794 - INFO - [raw sql] {}
+2026-06-18 07:53:02,794 - INFO - BEGIN (implicit)
+2026-06-18 07:53:02,796 - INFO - INSERT INTO clientes (nombre, telefono, email, fecha_vencimiento, activo) VALUES (%(nombre)s, %(telefono)s, %(email)s, %(fecha_vencimiento)s, %(activo)s)
+2026-06-18 07:53:02,796 - INFO - [generated in 0.00024s] {'nombre': 'string', 'telefono': 'string', 'email': 'user@example.com', 'fecha_vencimiento': datetime.date(2026, 6, 18), 'activo': 1}
+2026-06-18 07:53:02,804 - INFO - COMMIT
+2026-06-18 07:53:02,805 - INFO - BEGIN (implicit)
+2026-06-18 07:53:02,807 - INFO - SELECT clientes.id, clientes.nombre, clientes.telefono, clientes.email, clientes.fecha_vencimiento, clientes.activo 
+FROM clientes 
+WHERE clientes.id = %(pk_1)s
+2026-06-18 07:53:02,808 - INFO - [generated in 0.00035s] {'pk_1': 4}
+2026-06-18 07:53:02,813 - INFO - Cliente creado ID=4 EMAIL=user@example.com
+2026-06-18 07:53:02,813 - INFO - ROLLBACK

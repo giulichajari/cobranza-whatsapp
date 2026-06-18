@@ -3,7 +3,11 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from src.app.database.connection import SessionLocal
 from src.app.models.cliente import Cliente
+from fastapi import Depends
 
+from src.app.auth.dependencies import (
+    get_current_user
+)
 import logging
 
 logger = logging.getLogger(__name__)

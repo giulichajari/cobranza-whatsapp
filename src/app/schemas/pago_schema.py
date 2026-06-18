@@ -11,6 +11,13 @@ class PagoCreate(BaseModel):
     estado: str
 
 
+class PagoUpdate(BaseModel):
+    cliente_id: int
+    importe: Decimal
+    fecha_pago: datetime
+    estado: str
+
+
 class PagoResponse(BaseModel):
     id: int
     cliente_id: int

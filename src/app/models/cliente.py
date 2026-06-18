@@ -46,3 +46,8 @@ class Cliente(Base):
        "Pago",
        back_populates="cliente"
     )
+    configuracion = relationship(
+    "Configuracion",
+    back_populates="cliente",
+    uselist=False  # 👈 1 a 1
+    )
