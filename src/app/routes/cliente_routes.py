@@ -1,7 +1,8 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Request
 
 from src.app.controllers.cliente_controller import ClienteController
 from src.app.schemas.client_schema import ClienteCreate
+from src.app.middleware.rate_limit import limiter
 
 router = APIRouter(
     prefix="/clientes",
@@ -10,7 +11,8 @@ router = APIRouter(
 
 
 @router.get("/")
-def listar_clientes():
+@limiter.limit("60/minute")
+def listar_clientes(request: Request):
     return ClienteController.listar()
 
 

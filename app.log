@@ -1,0 +1,20 @@
+2026-06-18 07:47:46,185 - INFO - Iniciando API de cobranza
+2026-06-18 07:47:46,901 - INFO - Iniciando API de cobranza
+2026-06-18 07:48:14,885 - INFO - Listado de clientes solicitado
+2026-06-18 07:48:14,886 - ERROR - Error al listar clientes: When initializing mapper Mapper[Cliente(clientes)], expression 'Pago' failed to locate a name ('Pago'). If this is a class name, consider adding this relationship() to the <class 'src.app.models.cliente.Cliente'> class after both dependent classes have been defined.
+2026-06-18 07:49:59,767 - INFO - Iniciando API de cobranza
+2026-06-18 07:50:03,620 - INFO - Listado de clientes solicitado
+2026-06-18 07:50:07,729 - ERROR - Error al listar clientes: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-18 07:50:33,418 - INFO - Listado de clientes solicitado
+2026-06-18 07:50:33,514 - INFO - SELECT DATABASE()
+2026-06-18 07:50:33,514 - INFO - [raw sql] {}
+2026-06-18 07:50:33,527 - INFO - SELECT @@sql_mode
+2026-06-18 07:50:33,527 - INFO - [raw sql] {}
+2026-06-18 07:50:33,528 - INFO - SELECT @@lower_case_table_names
+2026-06-18 07:50:33,528 - INFO - [raw sql] {}
+2026-06-18 07:50:33,529 - INFO - BEGIN (implicit)
+2026-06-18 07:50:33,531 - INFO - SELECT clientes.id AS clientes_id, clientes.nombre AS clientes_nombre, clientes.telefono AS clientes_telefono, clientes.email AS clientes_email, clientes.fecha_vencimiento AS clientes_fecha_vencimiento, clientes.activo AS clientes_activo 
+FROM clientes
+2026-06-18 07:50:33,531 - INFO - [generated in 0.00039s] {}
+2026-06-18 07:50:33,545 - INFO - ROLLBACK
