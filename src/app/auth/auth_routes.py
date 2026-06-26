@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi.security import OAuth2PasswordRequestForm
 
 from src.app.auth.jwt import crear_token
 
@@ -9,23 +10,17 @@ router = APIRouter(
 
 
 @router.post("/login")
-def login(username: str, password: str):
+def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    username = form_data.username
+    password = form_data.password
 
     if username != "admin":
-        raise HTTPException(
-            status_code=401,
-            detail="Credenciales inválidas"
-        )
+        raise HTTPException(401, "Credenciales inválidas")
 
     if password != "123456":
-        raise HTTPException(
-            status_code=401,
-            detail="Credenciales inválidas"
-        )
+        raise HTTPException(401, "Credenciales inválidas")
 
-    token = crear_token({
-        "sub": username
-    })
+    token = crear_token({"sub": username})
 
     return {
         "access_token": token,

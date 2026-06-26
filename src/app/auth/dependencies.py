@@ -30,7 +30,6 @@ def get_current_user(
             )
 
         return username
-
     except JWTError:
         raise HTTPException(
             status_code=401,

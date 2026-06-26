@@ -21,6 +21,10 @@ __pycache__/
 .coverage
 htmlcov/
 
+# Logs
+app.log
+*.log
+
 # OS
 Thumbs.db
 .DS_Store
